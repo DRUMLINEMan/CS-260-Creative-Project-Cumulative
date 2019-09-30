@@ -1,0 +1,121 @@
+.footer {
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
+    width: 100%;
+    height: 22px;
+    background-color: #343a40;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.comic-sans {
+    font-family: "Comic Sans MS";
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.box {
+    box-shadow: 8px 8px 5px lightgrey;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.max-w-1200 {
+    max-width: 1200px;
+}
+
+.min-w-1200 {
+    min-width: 1200px;
+}
+
+.min-h-200 {
+    min-height: 200px;
+}
+
+.m-50-auto {
+    margin: 50px auto;
+}
+
+.midnight-blue {
+    color: rgb(20,20,135);
+}
+
+.font-36 {
+    font-size: 36px;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 45px;
+    height: 110px;
+    font-family: "Comic Sans MS";
+    padding-top: 15px;
+}
+
+.border-round {
+    border-radius: 55px;
+}
+
+.w-100p {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    margin: 10px;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex:3;
+}
+
+.bg-lightest-grey {
+    background-color: rgb(245,245,245);
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.font-darkgrey {
+    color: darkgrey;
+    /*color: rgba(211,211,211,1);*/
+}
+
+
+body {
+  margin-bottom: 50px;
+  background-color: rgb(230,230,230);
+  font-family: "Comic Sans MS";
+}
+
+.listing {
+  position: relative;
+  z-index: 0;
+}
