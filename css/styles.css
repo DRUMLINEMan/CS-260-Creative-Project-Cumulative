@@ -1,4 +1,4 @@
-.footer {
+/*.footer {
     background-image: none;
     background-repeat: repeat;
     background-attachment: scroll;
@@ -13,7 +13,7 @@
     color: white;
     font-size: 14px;
     z-index: 10;
-}
+}*/
 
 .comic-sans {
     font-family: "Comic Sans MS";
