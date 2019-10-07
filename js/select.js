@@ -8,23 +8,23 @@ var meals = [{
     "name":"Burrito",
     "img":"burritoTest"
 },{
-    "name":"Meal 4",
-    "img":""
+    "name":"Pizza",
+    "img":"pizzaTest"
 },{
-    "name":"Meal 5",
-    "img":""
+    "name":"Burrito",
+    "img":"burritoTest"
 },{
-    "name":"Meal 6",
-    "img":""
+    "name":"Cheeseburger",
+    "img":"burgerTest"
 },{
-    "name":"Meal 7",
-    "img":""
+    "name":"Burrito",
+    "img":"burritoTest"
 },{
-    "name":"Meal 8",
-    "img":""
+    "name":"Cheeseburger",
+    "img":"burgerTest"
 },{
-    "name":"Meal 9",
-    "img":""
+    "name":"Pizza",
+    "img":"pizzaTest"
 }]
 
 function select(id) {
