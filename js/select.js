@@ -1,12 +1,12 @@
 var meals = [{
-    "name":"Meal 1",
-    "img":""
+    "name":"Cheeseburger",
+    "img":"burgerTest"
 },{
-    "name":"Meal 2",
-    "img":""
+    "name":"Pizza",
+    "img":"pizzaTest"
 },{
-    "name":"Meal 3",
-    "img":""
+    "name":"Burrito",
+    "img":"burritoTest"
 },{
     "name":"Meal 4",
     "img":""
@@ -56,12 +56,12 @@ function fill(){
             innerDiv.setAttribute("class", "d-flex");
             var innerDivHtml = "<img src=\"";
             if(meals[j].img != ""){
-                innerDivHtml += meals[j].img;
+                innerDivHtml += "images/" + meals[j].img + ".jpg";
             }
             else{
                 innerDivHtml += "http://alumni.byu.edu/sites/all/themes/byu2016/sites/default/favicon.ico";
             }
-            innerDivHtml += "\" height=\"100px\" />&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"align-self-center\"><h4>" + meals[j.name] + "</h4></div>";
+            innerDivHtml += "\" height=\"100px\" class=\"meal-img\" />&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"align-self-center\"><h4>" + meals[j].name + "</h4></div>";
             innerDiv.innerHTML = innerDivHtml;
             item.appendChild(innerDiv);
             column.appendChild(item);

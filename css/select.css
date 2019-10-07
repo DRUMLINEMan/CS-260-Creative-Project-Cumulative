@@ -19,3 +19,9 @@
     background-color: #6997ff;
     cursor:pointer;
 }
+
+.meal-img {
+    border-radius:50%;
+    border-style:solid;
+    border-color:#002e5d;
+}
