@@ -1,5 +1,31 @@
-var meals = ["Meal 1", "Meal 2", "Meal 3", "Meal 4", "Meal 5", "Meal 6", "Meal 7", "Meal 8", "Meal 9"];
-var imgs = ["", "", "", "", "", "", "", "", ""];
+var meals = [{
+    "name":"Meal 1",
+    "img":""
+},{
+    "name":"Meal 2",
+    "img":""
+},{
+    "name":"Meal 3",
+    "img":""
+},{
+    "name":"Meal 4",
+    "img":""
+},{
+    "name":"Meal 5",
+    "img":""
+},{
+    "name":"Meal 6",
+    "img":""
+},{
+    "name":"Meal 7",
+    "img":""
+},{
+    "name":"Meal 8",
+    "img":""
+},{
+    "name":"Meal 9",
+    "img":""
+}]
 
 function select(id) {
     document.getElementById(id).classList.add("selected");
@@ -29,13 +55,13 @@ function fill(){
             var innerDiv = document.createElement("div");
             innerDiv.setAttribute("class", "d-flex");
             var innerDivHtml = "<img src=\"";
-            if(imgs[j] != ""){
-                innerDivHtml += imgs[j];
+            if(meals[j].img != ""){
+                innerDivHtml += meals[j].img;
             }
             else{
                 innerDivHtml += "http://alumni.byu.edu/sites/all/themes/byu2016/sites/default/favicon.ico";
             }
-            innerDivHtml += "\" height=\"100px\" />&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"align-self-center\"><h4>" + meals[j] + "</h4></div>";
+            innerDivHtml += "\" height=\"100px\" />&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"align-self-center\"><h4>" + meals[j.name] + "</h4></div>";
             innerDiv.innerHTML = innerDivHtml;
             item.appendChild(innerDiv);
             column.appendChild(item);
