@@ -47,7 +47,7 @@ function fill(){
         if(list.length < end){
             end = list.length;
         }
-        for(let j = i * 3; j < end; j++){
+        for(let j = i * eachCol; j < end; j++){
             var item = document.createElement("li");
             item.setAttribute("class", "select-meal-item");
             item.setAttribute("id", j);

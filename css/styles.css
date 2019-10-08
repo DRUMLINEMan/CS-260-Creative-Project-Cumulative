@@ -16,7 +16,7 @@
 }*/
 
 .comic-sans {
-    font-family: "Comic Sans MS";
+    font-family: "Tahoma";
 }
 
 .border-2 {
@@ -61,7 +61,7 @@
     font-weight: bold;
     font-size: 45px;
     height: 110px;
-    font-family: "Comic Sans MS";
+    font-family: "Tahoma";
     padding-top: 15px;
 }
 
@@ -112,7 +112,7 @@
 body {
   margin-bottom: 50px;
   background-color: rgb(230,230,230);
-  font-family: "Comic Sans MS"
+  font-family: "Tahoma"
 }
 
 .listing {
