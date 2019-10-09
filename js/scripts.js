@@ -8,7 +8,11 @@ function buildRecipes(){
     for(let i = 0; i < numRows; i++){
         var row = document.createElement("div");
         row.setAttribute("class", "d-flex");
-        for(let j = 0; j < 3; j++){
+        var end = 3;
+        if((i * 3) + 3 > selected_meals.length){
+            end = selected_meals.length - (i * 3);
+        }
+        for(let j = 0; j < end; j++){
             var index = (i * 3) + j;
             var meal = document.createElement("div");
             meal.setAttribute("class", "meal");

@@ -123,5 +123,4 @@ function submit() {
     }
     console.log(meals);
     console.log(selected_meals);
-    localStorage.setItem("obj", JSON.stringify(selected_meals));
 }
