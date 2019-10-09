@@ -15,8 +15,24 @@
     z-index: 10;
 }*/
 
+.m-30 {
+    margin: 30px;
+}
+
+.mlr-75 {
+    margin: 0 75px 0 75px;
+}
+
+.mr-235 {
+    margin-right: 235px;
+}
+
 .font-tahoma {
     font-family: "Tahoma";
+}
+
+.border {
+    border: 1px solid !important;
 }
 
 .border-2 {
@@ -35,6 +51,10 @@
 
 .min-w-1200 {
     min-width: 1200px;
+}
+
+.min-h-500 {
+    min-height: 500px;
 }
 
 .min-h-200 {
@@ -75,7 +95,6 @@
 
 .flex {
     display: flex;
-    margin: 10px;
 }
 
 .flex-col {
@@ -118,4 +137,20 @@ body {
 .listing {
   position: relative;
   z-index: 0;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+@media (max-device-width: 480px) {
+    .min-h-screen {
+        min-height: 300px;
+    }
+}
+
+@media (min-device-width: 480px) {
+    .min-h-screen {
+        height: 650px;
+    }
 }
