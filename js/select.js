@@ -1,39 +1,60 @@
 /* global fetch */
+/* global localStorage */
 
 var meals = [{
     "name":"Cheeseburger",
-    "img":"burgerTest"
+    "img":"burgerTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Pizza",
-    "img":"pizzaTest"
+    "img":"pizzaTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Burrito",
-    "img":"burritoTest"
+    "img":"burritoTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Pizza",
-    "img":"pizzaTest"
+    "img":"pizzaTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Burrito",
-    "img":"burritoTest"
+    "img":"burritoTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Cheeseburger",
-    "img":"burgerTest"
+    "img":"burgerTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Burrito",
-    "img":"burritoTest"
+    "img":"burritoTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Cheeseburger",
-    "img":"burgerTest"
+    "img":"burgerTest",
+    "id":"0",
+    "selected":"false"
 },{
     "name":"Pizza",
-    "img":"pizzaTest"
+    "img":"pizzaTest",
+    "id":"0",
+    "selected":"false"
 }]
 
 function select(id) {
     if (document.getElementById(id).classList.contains("selected")) {
         document.getElementById(id).classList.remove("selected");
+        meals[id].selected="false";
     } else {
-    document.getElementById(id).classList.add("selected");
+        document.getElementById(id).classList.add("selected");
+        meals[id].selected="true";
     }
 }
 
@@ -43,10 +64,10 @@ function fill(){
         .then(function(response) {
           return response.json();
         }).then(function(json) {
-            console.log(json);
             for(let i = 0; i < json.results.length; i++){
                 meals[i].name = json.results[i].title;
                 meals[i].img = json.baseUri + json.results[i].image;
+                meals[i].id = json.results[i].id;
             }
             var eachCol = meals.length / 3;
             var end = 0;
@@ -87,9 +108,10 @@ fill();
 var selected_meals = new Array();
 
 function submit() {
+    selected_meals = new Array();
     var list_meals = document.getElementById("select-meal").getElementsByTagName("li");
-    var filter_meals = Array.from(list_meals).filter(function(item) {
-        if (item.classList.contains("selected")) {
+    var filter_meals = Array.from(meals).filter(function(item) {
+        if (item.selected === "true") {
             return true;
         } else {
             return false;
@@ -97,11 +119,9 @@ function submit() {
     })
     
     for (var i = 0; i < filter_meals.length; i++) {
-        var child1 = filter_meals[i].getElementsByTagName("div");
-        var child2 = child1[0].getElementsByTagName("div");
-        var child3 = child2[0].getElementsByTagName("h4");
-        selected_meals[i] = child3[0].innerHTML;
+        selected_meals[i] = {"name":filter_meals[i].name, "id":filter_meals[i].id, "img":filter_meals[i].img};
     }
-    
+    console.log(meals);
     console.log(selected_meals);
+    localStorage.setItem("obj", JSON.stringify(selected_meals));
 }

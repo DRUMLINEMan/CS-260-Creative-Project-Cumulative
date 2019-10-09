@@ -154,3 +154,34 @@ body {
         height: 650px;
     }
 }
+
+.meal-list {
+    padding:5px;
+    background-color:#d2d2d2;
+    border-radius:25px;
+    border-style:none;
+}
+
+.meal-list h4 {
+    margin:20px;
+    padding:5px;
+    border-radius:25px;
+    background-color:#b2b2b2;
+}
+
+.meal-img {
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    width:200px;
+    text-align:center;
+}
+
+.meal {
+    margin:20px;
+}
