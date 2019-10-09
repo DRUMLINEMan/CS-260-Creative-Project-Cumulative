@@ -1,6 +1,6 @@
 /* global localStorage */
 
-var selected_meals = JSON.parse(localStorage.getItem("obj"));
+var selected_meals = JSON.parse(localStorage.getItem("selected_meals"));
 console.log(selected_meals);
 
 function buildRecipes(){
