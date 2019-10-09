@@ -28,11 +28,10 @@ var meals = [{
 }]
 
 function select(id) {
+    if (document.getElementById(id).classList.contains("selected")) {
+        document.getElementById(id).classList.remove("selected");
+    } else {
     document.getElementById(id).classList.add("selected");
-    for(let i = 0; i < meals.length; i++){
-        if(i != id){
-            document.getElementById(i).classList.remove("selected");
-        }
     }
 }
 
@@ -71,3 +70,25 @@ function fill(){
 }
 
 fill();
+
+var selected_meals = new Array();
+
+function submit() {
+    var list_meals = document.getElementById("select-meal").getElementsByTagName("li");
+    var filter_meals = Array.from(list_meals).filter(function(item) {
+        if (item.classList.contains("selected")) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    
+    for (var i = 0; i < filter_meals.length; i++) {
+        var child1 = filter_meals[i].getElementsByTagName("div");
+        var child2 = child1[0].getElementsByTagName("div");
+        var child3 = child2[0].getElementsByTagName("h4");
+        selected_meals[i] = child3[0].innerHTML;
+    }
+    
+    console.log(selected_meals);
+}
