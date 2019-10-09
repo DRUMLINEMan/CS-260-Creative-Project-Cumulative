@@ -20,7 +20,7 @@ function buildRecipes(){
             img.setAttribute("src", selected_meals[index].img);
             img.setAttribute("height", "200px");
             img.setAttribute("width", "200px");
-            img.setAttribute("class", "meal-img");
+            img.setAttribute("class", "meal-img-home");
             meal.appendChild(img);
             var name = document.createElement("p");
             name.setAttribute("class", "ellipsis");
