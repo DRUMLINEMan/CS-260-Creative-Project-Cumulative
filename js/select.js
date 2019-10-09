@@ -59,7 +59,7 @@ function select(id) {
 }
 
 function fill(){
-    const url = "https://api.spoonacular.com/recipes/search?query=burger&number=" + meals.length + "&apiKey=6defd8977ec24ae9829533ab61cdc90a";
+    const url = "https://api.spoonacular.com/recipes/search?query=pineapple&number=" + meals.length + "&apiKey=6defd8977ec24ae9829533ab61cdc90a";
       fetch(url)
         .then(function(response) {
           return response.json();
@@ -85,16 +85,26 @@ function fill(){
                     item.setAttribute("id", j);
                     item.setAttribute("onclick", "select(" + j + ")");
                     var innerDiv = document.createElement("div");
-                    innerDiv.setAttribute("class", "d-flex");
-                    var innerDivHtml = "<img src=\"";
+                    innerDiv.setAttribute("class", "row");
+                    var imgDiv = document.createElement("div");
+                    imgDiv.setAttribute("class", "col");
+                    var innerImg = document.createElement("img");
                     if(meals[j].img != ""){
-                        innerDivHtml += meals[j].img;
+                        innerImg.setAttribute("src", meals[j].img);
                     }
-                    else{
-                        innerDivHtml += "http://alumni.byu.edu/sites/all/themes/byu2016/sites/default/favicon.ico";
-                    }
-                    innerDivHtml += "\" height=\"100px\" width=\"100px\" class=\"meal-img\" />&nbsp;&nbsp;&nbsp;&nbsp;<div class=\"align-self-center\"><h4>" + meals[j].name + "</h4></div>";
-                    innerDiv.innerHTML = innerDivHtml;
+                    innerImg.setAttribute("height", "100px;");
+                    innerImg.setAttribute("width", "100px;");
+                    innerImg.setAttribute("class", "meal-img");
+                    imgDiv.appendChild(innerImg);
+                    var titleDiv = document.createElement("div");
+                    titleDiv.setAttribute("class", "col");
+                    titleDiv.setAttribute("style", "margin:auto; margin-right:10px;");
+                    var title = document.createElement("h5");
+                    title.setAttribute("class", "select-ellipsis");
+                    title.innerHTML = meals[j].name;
+                    titleDiv.appendChild(title);
+                    innerDiv.appendChild(imgDiv);
+                    innerDiv.appendChild(titleDiv);
                     item.appendChild(innerDiv);
                     column.appendChild(item);
                 }
@@ -123,7 +133,7 @@ function submit() {
     }
     console.log(meals);
     console.log(selected_meals);
-    localStorage.setItem("obj", JSON.stringify(selected_meals));
+    localStorage.setItem("selected_meals", JSON.stringify(selected_meals));
     redirectHome();
 }
 

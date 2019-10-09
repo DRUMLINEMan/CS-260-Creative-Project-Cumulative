@@ -24,6 +24,8 @@
     border-radius:50%;
     border-style:solid;
     border-color:#002e5d;
+    width:100px;
+    height:100px;
     object-fit:cover;
 }
 
@@ -49,4 +51,11 @@
 
 .hidden {
     visibility: hidden;
+}
+
+.select-ellipsis {
+    text-overflow: ellipsis;
+    overflow:hidden;
+    width:200px;
+    text-align:center;
 }

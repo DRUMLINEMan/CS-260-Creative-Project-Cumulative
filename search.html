@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/search.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Shop Master</title>
 </head>
@@ -19,13 +20,13 @@
     </button>
     <div class="collapse navbar-collapse w-100p text-center" id="navbarNav">
       <ul class="navbar-nav w-100p">
-        <li class="nav-item active flex-1">
+        <li class="nav-item flex-1">
           <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item flex-1">
           <a class="nav-link" href="./select.html">Select Meals</a>
         </li>
-        <li class="nav-item flex-1">
+        <li class="nav-item active flex-1">
           <a class="nav-link" href="./search.html">New Meals</a>
         </li>
       </ul>
@@ -34,18 +35,30 @@
   
   <br>
   
-  <!--<h1 class="text-center">Home page</h1>-->
+  <h1 class="text-center">Search New Meals</h1>
   
-  <div class="flex m-30">
-    <div id="selected-meals" class="flex-1 mlr-75 meal-list">
-      <h4>&nbsp;&nbsp;Selected Meals</h4>
-    </div>
-    <div id="shopping-list" class="border flex-1 min-h-screen mlr-75 overflow-auto">
-      <text>Shopping List</text>
-    </div>
+  <br>
+  
+  <div class="container">
+  
+  <div class="d-flex justify-content-center">
+      <div>
+          <label>Ingredient/Keyword:</label>
+          <input type="text" value="" id="keyword" />
+      </div>
+      &nbsp;
+      <div>
+          <button class="btn btn-search-meal" onclick="search()">
+              <span class="fa fa-search nohover"></span>
+          </button>
+      </div>
   </div>
   
   <br>
+  
+  <div id="search-results"></div>
+  
+  </div>
 
   <div class="footer">
     <a href="https://github.com/DRUMLINEMan/CS-260-Creative-Project-Cumulative" target="_blank">
@@ -57,7 +70,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script text="type/javascript" src="js/scripts.js"></script>
+  <script text="type/javascript" src="js/select.js"></script>
 </body>
 
 </html>
