@@ -1,22 +1,13 @@
-/*.footer {
-    background-image: none;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-position: 0% 0%;
-    position: fixed;
-    bottom: 0pt;
-    left: 0pt;
-    width: 100%;
-    height: 22px;
-    background-color: #343a40;
-    text-align: center;
-    color: white;
-    font-size: 14px;
-    z-index: 10;
-}*/
-
 .m-30 {
     margin: 30px;
+}
+
+.mr-5p {
+    margin-right: 5%;
+}
+
+.ml-5p {
+    margin-left: 5%;
 }
 
 .mlr-75 {
@@ -124,7 +115,6 @@
 
 .font-darkgrey {
     color: darkgrey;
-    /*color: rgba(211,211,211,1);*/
 }
 
 
@@ -155,14 +145,14 @@ body {
     }
 }
 
-.meal-list {
+.meal-list, .shopping-list {
     padding:5px;
     background-color:#d2d2d2;
     border-radius:25px;
     border-style:none;
 }
 
-.meal-list h4 {
+.meal-list h4, .shopping-list h4{
     margin:20px;
     padding:5px;
     border-radius:25px;
@@ -172,6 +162,12 @@ body {
 .meal-img-home {
     border-radius:50%;
     object-fit:cover;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ellipsis {
