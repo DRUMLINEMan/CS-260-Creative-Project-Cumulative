@@ -78,7 +78,7 @@ function add(){
         } else {
             return false;
         }
-    })
+    });
     
     for (var i = 0; i < filter_meals.length; i++) {
         selected_meals[i] = {"name":filter_meals[i].name, "id":filter_meals[i].id, "img":filter_meals[i].img};

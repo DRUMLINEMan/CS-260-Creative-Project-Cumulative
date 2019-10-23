@@ -40,35 +40,36 @@ function buildRecipes() {
     }
 }
 
-// var ingredientsList = new Array();
+ var ingredientsList = new Array();
 
-// function populateShppoingList() {
-//     if (selected_meals.length == 0) {
-//         return;
-//     }
-//     console.log(selected_meals[0].id)
-//     const url = "https://api.spoonacular.com/recipes/" + selected_meals[0].id + "/information&apiKey=6defd8977ec24ae9829533ab61cdc90a";
-//     fetch(url)
-//         .then(function(response) {
-//             return response.json();
-//         }).then(function(json) {
-//                 console.log(json);
-//                 for (let i = 0; i < json.extendedIngredients.length; i++) {
-//                     ingredientsList[i] = { "name": json.extendedIngredients[i].name, "amount": json.extendedIngredients[i].measures.us.amount, "unit": json.extendedIngredients[i].measures.us.unitLong };
-//                 }
-//                 var list = document.createElement("div");
-//                 list.setAttribute("class", "flex-col");
-//                 for (let i = 0; i < json.extendedIngredients.length; i++) {
-//                     var itemSlot = document.createElement("div");
-//                     itemSlot.setAttribute("class", "flex-1 shopping-list-item");
-//                     var item = document.createElement("p");
-//                     item.innerHTML = ingredientsList[i].name + " - " + ingredientsList[i].amount + " " + ingredientsList[i].unit;
-//                     itemSlot.append(item);
-//                     list.appendChild(itemSlot);
-//                 }
-//                 document.getElementById("shopping-list").appendChild(list);
-//         });
-// }
+ function populateShoppingList() {
+     if (selected_meals.length == 0) {
+         return;
+     }
+     for(let index = 0; index < selected_meals.length; index++){
+         const url = "https://api.spoonacular.com/recipes/" + selected_meals[index].id + "/information?apiKey=6defd8977ec24ae9829533ab61cdc90a";
+         fetch(url)
+             .then(function(response) {
+                 return response.json();
+             }).then(function(json) {
+                     console.log(json);
+                     for (let i = 0; i < json.extendedIngredients.length; i++) {
+                         ingredientsList[i] = { "name": json.extendedIngredients[i].name, "amount": json.extendedIngredients[i].measures.us.amount, "unit": json.extendedIngredients[i].measures.us.unitLong };
+                     }
+                     var list = document.createElement("div");
+                     list.setAttribute("class", "flex-col");
+                     for (let i = 0; i < json.extendedIngredients.length; i++) {
+                         var itemSlot = document.createElement("div");
+                         itemSlot.setAttribute("class", "flex-1 shopping-list-item");
+                         var item = document.createElement("p");
+                         item.innerHTML = ingredientsList[i].name + " - " + ingredientsList[i].amount + " " + ingredientsList[i].unit;
+                         itemSlot.append(item);
+                         list.appendChild(itemSlot);
+                     }
+                     document.getElementById("shopping-list").appendChild(list);
+             });
+     }
+ }
 
 buildRecipes();
-// populateShppoingList();
+populateShoppingList();
