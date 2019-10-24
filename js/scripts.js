@@ -46,7 +46,8 @@ function buildRecipes() {
      if (selected_meals.length == 0) {
          return;
      }
-     for(let index = 0; index < selected_meals.length; index++){
+    //  for(let index = 0; index < selected_meals.length; index++){
+    for(let index = 0; index < 1; index++){
          const url = "https://api.spoonacular.com/recipes/" + selected_meals[index].id + "/information?apiKey=6defd8977ec24ae9829533ab61cdc90a";
          fetch(url)
              .then(function(response) {
