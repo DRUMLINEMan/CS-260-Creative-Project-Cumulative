@@ -39,12 +39,28 @@
   
   <br>
   
-  <div class="container">
+  <div class="container" id="container">
       
-  <div class="d-flex justify-content-center" id="select-meal"></div>
-  <div class="d-flex justify-content-center">
-    <button class="border submit-button" onclick="submit()" >Submit</button>
-    <button class="border submit-button" onclick="clearMeals()" >Clear Meals</button>
+  <div class="d-flex justify-content-center" id="selectMeal">
+    <div v-for="i in 3" :key="i" class="flex-md-fill">
+      <ul>
+        <li v-for="j in meals[i - 1].length" :key="j" class="selectMealItem" v-bind:id="index(i, j)" @click="select(index(i, j))">
+          <div class="row">
+            <div class="col">
+              <img v-bind:src="meals[i - 1][j - 1].img" height="100px;" width="100px;" class="mealImg">
+            </div>
+            <div class="col" style="margin:auto; margin-right:10px;">
+              <h5 class="search-ellipsis">{{meals[i - 1][j - 1].name}}</h5>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="d-flex justify-content-center" id="vbuttons">
+    <button class="border submit-button" v-on:click="submit" >Submit</button>
+    <button class="border submit-button" v-on:click="clearMeals" >Clear Meals</button>
   </div>
   </div>
 
@@ -55,6 +71,7 @@
   </div>
   
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
