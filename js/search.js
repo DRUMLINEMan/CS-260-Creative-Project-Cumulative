@@ -32,6 +32,7 @@ function search(){
                     item.setAttribute("onclick", "select(" + j + ")");
                     var innerDiv = document.createElement("div");
                     innerDiv.setAttribute("class", "row");
+                    innerDiv.setAttribute("style", "max-height: 100px;");
                     var imgDiv = document.createElement("div");
                     imgDiv.setAttribute("class", "col");
                     var innerImg = document.createElement("img");
@@ -47,6 +48,7 @@ function search(){
                     titleDiv.setAttribute("style", "margin:auto; margin-right:10px;");
                     var title = document.createElement("h5");
                     title.setAttribute("class", "selectEllipsis");
+                    title.setAttribute("style", "max-height: 100px;")
                     title.innerHTML = meals[j].name;
                     titleDiv.appendChild(title);
                     innerDiv.appendChild(imgDiv);

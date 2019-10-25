@@ -1,5 +1,13 @@
+.p-5 {
+    padding:5px !important;
+}
+
 .m-30 {
     margin: 30px;
+}
+
+.m-20 {
+    margin: 20px;
 }
 
 .mr-5p {

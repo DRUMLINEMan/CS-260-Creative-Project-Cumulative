@@ -48,7 +48,7 @@
     </div>
     <div class="flex-2 ml-5p shopping-list">
       <h4 class="mr-5p ml-5p">&nbsp;&nbsp;Shopping List</h4>
-      <div v-if="mealsAreSelected" class="flex-col">
+      <div v-if="mealsAreSelected" class="flex-col m-20 p-5">
         <div v-for="item in shoppingList" class="flex-1 shopping-list-item">
           <p>
             {{item.name}} - {{item.amount}} {{item.unit}}
