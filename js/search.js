@@ -27,7 +27,7 @@ function search(){
                 }
                 for(let j = i * eachCol; j < end; j++){
                     var item = document.createElement("li");
-                    item.setAttribute("class", "select-meal-item");
+                    item.setAttribute("class", "selectMealItem");
                     item.setAttribute("id", j);
                     item.setAttribute("onclick", "select(" + j + ")");
                     var innerDiv = document.createElement("div");
@@ -40,13 +40,13 @@ function search(){
                     }
                     innerImg.setAttribute("height", "100px;");
                     innerImg.setAttribute("width", "100px;");
-                    innerImg.setAttribute("class", "meal-img");
+                    innerImg.setAttribute("class", "mealImg");
                     imgDiv.appendChild(innerImg);
                     var titleDiv = document.createElement("div");
                     titleDiv.setAttribute("class", "col");
                     titleDiv.setAttribute("style", "margin:auto; margin-right:10px;");
                     var title = document.createElement("h5");
-                    title.setAttribute("class", "select-ellipsis");
+                    title.setAttribute("class", "selectEllipsis");
                     title.innerHTML = meals[j].name;
                     titleDiv.appendChild(title);
                     innerDiv.appendChild(imgDiv);
@@ -84,8 +84,9 @@ function add(){
         selected_meals[i] = {"name":filter_meals[i].name, "id":filter_meals[i].id, "img":filter_meals[i].img};
     }
     
-    var db_meals = JSON.parse(localStorage.getItem("meal-db"));
+    var db_meals = JSON.parse(localStorage.getItem("mealDb"));
     if(db_meals !== null){
+        console.log(db_meals.length);
         for(let i = 0; i < db_meals.length; i++){
             var found = false;
             console.log(selected_meals.length);
@@ -95,12 +96,12 @@ function add(){
                 }
             }
             if(!found){
-                selected_meals[i + filter_meals.length] = {"name":db_meals[i].name, "id":db_meals[i].id, "img":db_meals[i].img};
+                selected_meals.push({"name":db_meals[i].name, "id":db_meals[i].id, "img":db_meals[i].img});
             }
         }
     }
     
-    localStorage.setItem("meal-db", JSON.stringify(selected_meals));
+    localStorage.setItem("mealDb", JSON.stringify(selected_meals));
     
-    console.log(JSON.parse(localStorage.getItem("meal-db")));
+    console.log(JSON.parse(localStorage.getItem("mealDb")));
 }
