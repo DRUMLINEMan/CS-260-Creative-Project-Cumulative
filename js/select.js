@@ -11,13 +11,13 @@ let app = new Vue({
         this.fill();
     },
     methods: {
-        select: function(id) {
-            if (document.getElementById(id).classList.contains("selected")) {
-                document.getElementById(id).classList.remove("selected");
-                this.meals[id].selected="false";
+        select: function(i, j) {
+            if (document.getElementById(this.index(i, j)).classList.contains("selected")) {
+                document.getElementById(this.index(i, j)).classList.remove("selected");
+                this.meals[i - 1][j - 1].selected="false";
             } else {
-                document.getElementById(id).classList.add("selected");
-                this.meals[id].selected="true";
+                document.getElementById(this.index(i, j)).classList.add("selected");
+                this.meals[i - 1][j - 1].selected="true";
             }
         },
         fill: function(){
@@ -38,18 +38,15 @@ let app = new Vue({
         },
         submit: function(){
             this.selected_meals = new Array();
-            var list_meals = document.getElementById("selectMeal").getElementsByTagName("li");
-            var filter_meals = Array.from(this.meals).filter(function(item) {
-                if (item.selected === "true") {
-                    return true;
-                } else {
-                    return false;
-                }
-            })
             
-            for (var i = 0; i < filter_meals.length; i++) {
-                this.selected_meals[i] = {"name":filter_meals[i].name, "id":filter_meals[i].id, "img":filter_meals[i].img};
+            for(let i = 0; i < this.meals.length; i++){
+                for(let j = 0; j < this.meals[i].length; j++){
+                    if(this.meals[i][j].selected === "true"){
+                        this.selected_meals.push(this.meals[i][j]);
+                    }
+                }
             }
+            
             localStorage.setItem("selected_meals", JSON.stringify(this.selected_meals));
             this.redirectHome();
         },
@@ -63,7 +60,6 @@ let app = new Vue({
         },
         index: function(i, j){
             var result = (((j - 1) * 3) + (i - 1));
-            console.log("i: " + i + ", j: " + j + ", J-Index: " + result);
             return result;
         },
     },

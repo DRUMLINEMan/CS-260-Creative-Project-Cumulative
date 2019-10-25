@@ -44,13 +44,13 @@
   <div class="d-flex justify-content-center" id="selectMeal">
     <div v-for="i in 3" :key="i" class="flex-md-fill">
       <ul>
-        <li v-for="j in meals[i - 1].length" :key="j" class="selectMealItem" v-bind:id="index(i, j)" @click="select(index(i, j))">
+        <li v-for="j in meals[i - 1].length" :key="j" class="selectMealItem" v-bind:id="index(i, j)" @click="select(i, j)">
           <div class="row">
             <div class="col">
               <img v-bind:src="meals[i - 1][j - 1].img" height="100px;" width="100px;" class="mealImg">
             </div>
             <div class="col" style="margin:auto; margin-right:10px;">
-              <h5 class="search-ellipsis">{{meals[i - 1][j - 1].name}}</h5>
+              <h5 class="selectEllipsis">{{meals[i - 1][j - 1].name}}</h5>
             </div>
           </div>
         </li>

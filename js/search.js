@@ -46,7 +46,7 @@ function search(){
                     titleDiv.setAttribute("class", "col");
                     titleDiv.setAttribute("style", "margin:auto; margin-right:10px;");
                     var title = document.createElement("h5");
-                    title.setAttribute("class", "select-ellipsis");
+                    title.setAttribute("class", "selectEllipsis");
                     title.innerHTML = meals[j].name;
                     titleDiv.appendChild(title);
                     innerDiv.appendChild(imgDiv);
