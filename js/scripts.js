@@ -2,6 +2,9 @@
 /* global Vue */
 /* global axios */
 
+const host = "www.cs260nc.com";
+const port = 3000;
+
 let app = new Vue({
     el: '#mainPageDisplay',
     data: {
@@ -46,7 +49,7 @@ let app = new Vue({
             }
         },
         async loadShoppingList() {
-            const url = "https://api.spoonacular.com/recipes/" + this.selectedMeals[0].id + "/information?apiKey=6defd8977ec24ae9829533ab61cdc90a";
+            const url = "http://" + host + ":" + port + "/getIngredients?id=" + this.selectedMeals[0].id;
             const response = await axios.get(url);
             for (let ii = 0; ii < response.data.extendedIngredients.length; ii++) {
                 this.shoppingList.push({ name: response.data.extendedIngredients[ii].name, amount: response.data.extendedIngredients[ii].measures.us.amount, unit: response.data.extendedIngredients[ii].measures.us.unitLong });
