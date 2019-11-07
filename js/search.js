@@ -1,11 +1,14 @@
 /* global fetch */
 /* global localStorage */
 
+const host = "www.cs260nc.com";
+const port = 3000;
+
 var meals = new Array();
 
 function search(){
     var keyword = document.getElementById("keyword").value;
-    const url = "https://api.spoonacular.com/recipes/search?query=" + keyword + "&number=9&apiKey=6defd8977ec24ae9829533ab61cdc90a";
+    const url = "http://" + host + ":" + port + "/getMeals?keyword=" + keyword;
     fetch(url)
         .then(function(response) {
             return response.json();
